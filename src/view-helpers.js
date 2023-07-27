@@ -21,3 +21,7 @@ export function addImage(src, parent, classes = [], options = {}) {
     image.setAttribute(o, options[o]);
   }
 }
+
+export function tempString(temp) {
+  return `${temp}\u00B0`;
+}

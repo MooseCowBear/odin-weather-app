@@ -1,4 +1,4 @@
-import { addElement, addImage } from "./view-helpers";
+import { addElement, addImage, tempString } from "./view-helpers";
 import * as Weather from "./weather-helpers"
 
 export function drawComponent(data, fahrenheit) {
@@ -46,7 +46,7 @@ function drawHourlyForecast(parent, data, fahrenheit) {
     } else {
       addImage(nightIcons[hourlyData.icons[i][1]], hourDiv, ['icon']);
     }
-    addElement('p', hourDiv, [], tempString(hourlyData.temps[i])); 
+    addElement('p', hourDiv, ['temp'], tempString(hourlyData.temps[i])); 
   }
 }
 
@@ -71,7 +71,7 @@ function drawMoreInfoDisplay(parent, data, fahrenheit) {
 
   const feels = addElement('div', moreInfoContainer, []);
   addElement('h3', feels, [], "Feels Like");
-  addElement('p', feels, [], tempString(Weather.feelsLike(data.current, fahrenheit)));
+  addElement('p', feels, ['temp'], tempString(Weather.feelsLike(data.current, fahrenheit)));
 
   const humidityLevel = addElement('div', moreInfoContainer, []);
   addElement('h3', humidityLevel, [], "Humidity");
@@ -106,8 +106,4 @@ function hourString(hour) {
   } else {
     return `${hour} am`;
   }
-}
-
-function tempString(temp) {
-  return `${temp} \u00B0`;
 }

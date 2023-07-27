@@ -160,7 +160,7 @@ main > div {
 }
 
 .icon {
-  height: 1.5rem;
+  height: 1.7rem;
 }
 
 .more-info {
@@ -217,7 +217,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-  filter: brightness(200%); /* not great -- change color!! maybe to a yellow*/
+  filter: brightness(0) saturate(100%) invert(86%) sepia(29%) saturate(3362%) hue-rotate(324deg) brightness(98%) contrast(86%);
 }
 
 .error {
