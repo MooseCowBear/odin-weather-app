@@ -35,15 +35,6 @@ export function currHour(dataObj) {
   return parseInt(dataObj.location.localtime.slice(len - 5, len - 3));
 }
 
-export function icon(dataObj) {
-  let daytime = dataObj.is_day;
-  let icon = dataObj.condition.icon;
-  icon = icon.substr(icon.length - 7);
-
-  console.log(daytime, icon);
-  return [daytime, icon];
-}
-
 export function next24Hours(dataObj, fahrenheit) {
   /* 
     function for getting all of the information
@@ -91,4 +82,13 @@ export function lowTemp(dataObj, fahrenheit) {
 
 export function precipitation(dataObj) {
   return dataObj.precip_in;
+}
+
+function icon(dataObj) {
+  let daytime = dataObj.is_day;
+  let icon = dataObj.condition.icon;
+  icon = icon.substr(icon.length - 7);
+
+  console.log(daytime, icon);
+  return [daytime, icon];
 }
