@@ -9,4 +9,4 @@ This implementation of [The Odin Project's](https://www.theodinproject.com/) Wea
 
 ## Screenshot
 
-![alt text](screenshots/weather.jpeg "weather app")
+![alt text](screenshots/weather.png "weather app")
