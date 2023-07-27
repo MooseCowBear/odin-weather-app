@@ -1,4 +1,5 @@
 import { drawComponent } from "./weather-component";
+import { drawError } from "./error-component";
 
 const KEY = '4df08516d90744c0a6a204434232607';
 
@@ -12,7 +13,7 @@ export async function getForecast(input, fahrenheit = true) {
     drawComponent(data, fahrenheit); 
 
   } catch(e) {
-    //handle error
     console.log(e);
+    drawError();
   }
 }
