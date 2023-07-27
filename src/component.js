@@ -10,7 +10,7 @@ function importAll(r) {
 const dayIcons = importAll(require.context('./weather_icons/day', false, /\.(png)$/));
 const nightIcons = importAll(require.context('./weather_icons/night', false, /\.(png)$/));
 
-export function drawComponent(data, fahrenheit = true) {
+export function drawComponent(data, fahrenheit) {
   const parent = document.getElementById("content");
   parent.textContent = "";
 
