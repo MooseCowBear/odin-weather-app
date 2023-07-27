@@ -194,7 +194,8 @@ h1 {
 input[type="text"] {
   background-color: transparent;
   outline: none;
-  padding: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
   font-family: inherit;
   border-bottom: 2px solid var(--text);
   border-top: none;
@@ -217,7 +218,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-  filter: brightness(0) saturate(100%) invert(86%) sepia(29%) saturate(3362%) hue-rotate(324deg) brightness(98%) contrast(86%);
+  filter: brightness(0) saturate(100%) invert(93%) sepia(33%) saturate(868%) hue-rotate(328deg) brightness(99%) contrast(95%);
 }
 
 .error {
@@ -226,4 +227,14 @@ input[type="submit"]:focus {
   padding: 3rem 0;
   border-radius: 5px;
   background-color: var(--background);
+}
+
+.error > p {
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 450px) {
+  input[type="text"] {
+    max-width: 230px;
+  }
 }

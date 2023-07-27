@@ -9,7 +9,6 @@ export async function getForecast(input, fahrenheit = true) {
   try {
     const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${KEY}&q=${input}&days=${numDays}`);
     const data = await response.json();
-    console.log(data);
     drawComponent(data, fahrenheit); 
 
   } catch(e) {

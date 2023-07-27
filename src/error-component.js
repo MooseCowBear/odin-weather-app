@@ -4,5 +4,7 @@ export function drawError() {
   const parent = document.getElementById("content");
   parent.textContent = "";
 
-  addElement('div', parent, ['error'], "Something went wrong.");
+  const wrapper = addElement('div', parent, ['error']);
+  addElement('div', wrapper, [], "Your search could not be completed.");
+  addElement('p', wrapper, [], "Try again.");
 }

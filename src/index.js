@@ -8,15 +8,15 @@ let fahrenheit = true;
   getForecast("new york", fahrenheit);
 
   const changeDegreesBtn = document.getElementById("degree-type");
-  console.log("button", changeDegreesBtn);
   changeDegreesBtn.addEventListener("click", () => {
-    console.log("change degrees");
     fahrenheit = !fahrenheit;
-    console.log("f", fahrenheit);
-    
     updateDegreeDisplay(fahrenheit);
     updateDegreeBtn(changeDegreesBtn, fahrenheit);
   });
 
-  //need to add listener/handler for form submit.
+  const searchBtn = document.querySelector('input[type="submit"]');
+  searchBtn.addEventListener("click", () => {
+    const formInput = document.querySelector('input[type="text"]').value;
+    getForecast(formInput, fahrenheit);
+  });
 })();
