@@ -81,7 +81,7 @@ export function lowTemp(dataObj, fahrenheit) {
 }
 
 export function precipitation(dataObj) {
-  return dataObj.precip_in;
+  return dataObj.precip_in.toString();
 }
 
 function icon(dataObj) {

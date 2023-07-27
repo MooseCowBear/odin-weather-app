@@ -25,7 +25,7 @@ function drawMainTempDisplay(parent, data, fahrenheit) {
   addElement('h1', mainTemperatureContainer, ['temp'], tempString(Weather.temperature(data.current, fahrenheit)));
   addElement('p', mainTemperatureContainer, [], Weather.condition(data.current));
 
-  const highLowWrapper = addElement('div', mainTemperatureContainer, []);
+  const highLowWrapper = addElement('div', mainTemperatureContainer, ['high-low']);
   const high = addElement('p', highLowWrapper, [], "H:");
   addElement('span', high, ['temp'], tempString(Weather.highTemp(data, fahrenheit)));
   const low = addElement('p', highLowWrapper, [], "L:");
@@ -55,7 +55,7 @@ function drawMoreInfoDisplay(parent, data, fahrenheit) {
 
   const uvIndex = addElement('div', moreInfoContainer, []);
   addElement('h3', uvIndex, [], "UV Index");
-  addElement('p', uvIndex, [], Weather.uv(data.current));
+  addElement('p', uvIndex, [], Weather.uv(data.current) + "/10");
 
   //sunrise or sunset?
   const sun = addElement('div', moreInfoContainer, []);
@@ -63,11 +63,11 @@ function drawMoreInfoDisplay(parent, data, fahrenheit) {
 
   const windSpeed = addElement('div', moreInfoContainer, []);
   addElement('h3', windSpeed, [], "Wind");
-  addElement('p', windSpeed, [], Weather.wind(data.current));
+  addElement('p', windSpeed, [], Weather.wind(data.current) + " mph");
 
   const precip = addElement('div', moreInfoContainer, []);
   addElement('h3', precip, [], "Precipitation");
-  addElement('p', precip, [], Weather.precipitation(data.current));
+  addElement('p', precip, [], Weather.precipitation(data.current) + " inches");
 
   const feels = addElement('div', moreInfoContainer, []);
   addElement('h3', feels, [], "Feels Like");
@@ -75,15 +75,15 @@ function drawMoreInfoDisplay(parent, data, fahrenheit) {
 
   const humidityLevel = addElement('div', moreInfoContainer, []);
   addElement('h3', humidityLevel, [], "Humidity");
-  addElement('p', humidityLevel, [], Weather.humidity(data.current));
+  addElement('p', humidityLevel, [], Weather.humidity(data.current) + "%");
 
   const pressureLevel = addElement('div', moreInfoContainer, []);
-  addElement('h3', pressureLevel, [], "Pressure (hgIn)");
-  addElement('p', pressureLevel, [], Weather.pressure(data.current));
+  addElement('h3', pressureLevel, [], "Pressure");
+  addElement('p', pressureLevel, [], Weather.pressure(data.current) + " hgIn");
 
   const vis = addElement('div', moreInfoContainer, []);
-  addElement('h3', vis, [], "Visibility (miles)");
-  addElement('p', vis, [], Weather.visibility(data.current));
+  addElement('h3', vis, [], "Visibility");
+  addElement('p', vis, [], Weather.visibility(data.current) + " miles");
 }
 
 function createSunDiv(data, parent) {
