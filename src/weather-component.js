@@ -16,7 +16,9 @@ function importAll(r) {
   return images;
 }
 
+// eslint-disable-next-line no-undef
 const dayIcons = importAll(require.context('./weather_icons/day', false, /\.(png)$/));
+// eslint-disable-next-line no-undef
 const nightIcons = importAll(require.context('./weather_icons/night', false, /\.(png)$/));
 
 function drawMainTempDisplay(parent, data, fahrenheit) {
