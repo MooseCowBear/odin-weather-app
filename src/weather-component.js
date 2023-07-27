@@ -1,15 +1,6 @@
 import { addElement, addImage } from "./view-helpers";
 import * as Weather from "./weather-helpers"
 
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, ) => { images[item.replace('./', '')] = r(item); });
-  return images;
-}
-
-const dayIcons = importAll(require.context('./weather_icons/day', false, /\.(png)$/));
-const nightIcons = importAll(require.context('./weather_icons/night', false, /\.(png)$/));
-
 export function drawComponent(data, fahrenheit) {
   const parent = document.getElementById("content");
   parent.textContent = "";
@@ -18,6 +9,15 @@ export function drawComponent(data, fahrenheit) {
   drawHourlyForecast(parent, data, fahrenheit);
   drawMoreInfoDisplay(parent, data, fahrenheit);
 }
+
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, ) => { images[item.replace('./', '')] = r(item); });
+  return images;
+}
+
+const dayIcons = importAll(require.context('./weather_icons/day', false, /\.(png)$/));
+const nightIcons = importAll(require.context('./weather_icons/night', false, /\.(png)$/));
 
 function drawMainTempDisplay(parent, data, fahrenheit) {
   const mainTemperatureContainer = addElement('div', parent, ['hero']);

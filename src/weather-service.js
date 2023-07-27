@@ -1,4 +1,4 @@
-import { drawComponent } from "./component";
+import { drawComponent } from "./weather-component";
 
 const KEY = '4df08516d90744c0a6a204434232607';
 
