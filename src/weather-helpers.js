@@ -89,6 +89,5 @@ function icon(dataObj) {
   let icon = dataObj.condition.icon;
   icon = icon.substr(icon.length - 7);
 
-  console.log(daytime, icon);
   return [daytime, icon];
 }
