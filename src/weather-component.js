@@ -18,12 +18,13 @@ function importAll(r) {
   return images;
 }
 
-// eslint-disable-next-line no-undef
 const dayIcons = importAll(
+  // eslint-disable-next-line no-undef
   require.context('./weather_icons/day', false, /\.(png)$/),
 );
-// eslint-disable-next-line no-undef
+
 const nightIcons = importAll(
+  // eslint-disable-next-line no-undef
   require.context('./weather_icons/night', false, /\.(png)$/),
 );
 
