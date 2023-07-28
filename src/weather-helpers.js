@@ -1,9 +1,9 @@
 export function temperature(dataObj, fahrenheit) {
-  return fahrenheit ? dataObj.temp_f : dataObj.temp_c; 
+  return fahrenheit ? dataObj.temp_f : dataObj.temp_c;
 }
 
 export function feelsLike(dataObj, fahrenheit) {
-  return fahrenheit ? dataObj.feelslike_f : dataObj.feelslike_c; 
+  return fahrenheit ? dataObj.feelslike_f : dataObj.feelslike_c;
 }
 
 export function condition(dataObj) {
@@ -47,16 +47,20 @@ export function next24Hours(dataObj, fahrenheit) {
 
   const curr = currHour(dataObj);
 
-  for (let i = curr; i < 24; i ++) {
+  for (let i = curr; i < 24; i++) {
     hours.push(i); //index is hour
-    temps.push(temperature(dataObj.forecast.forecastday[0].hour[i], fahrenheit));
+    temps.push(
+      temperature(dataObj.forecast.forecastday[0].hour[i], fahrenheit),
+    );
     icons.push(icon(dataObj.forecast.forecastday[0].hour[i]));
   }
-  
+
   let j = 0;
   while (hours.length < 24) {
     hours.push(j);
-    temps.push(temperature(dataObj.forecast.forecastday[1].hour[j], fahrenheit));
+    temps.push(
+      temperature(dataObj.forecast.forecastday[1].hour[j], fahrenheit),
+    );
     icons.push(icon(dataObj.forecast.forecastday[1].hour[j]));
     j++;
   }
@@ -64,8 +68,8 @@ export function next24Hours(dataObj, fahrenheit) {
   return {
     hours: hours,
     temps: temps,
-    icons: icons
-  }
+    icons: icons,
+  };
 }
 
 export function location(dataObj) {
@@ -73,11 +77,15 @@ export function location(dataObj) {
 }
 
 export function highTemp(dataObj, fahrenheit) {
-  return fahrenheit ? dataObj.forecast.forecastday[0].day.maxtemp_f : dataObj.forecast.forecastday[0].day.maxtemp_c;
+  return fahrenheit
+    ? dataObj.forecast.forecastday[0].day.maxtemp_f
+    : dataObj.forecast.forecastday[0].day.maxtemp_c;
 }
 
 export function lowTemp(dataObj, fahrenheit) {
-  return fahrenheit ? dataObj.forecast.forecastday[0].day.mintemp_f : dataObj.forecast.forecastday[0].day.mintemp_c;
+  return fahrenheit
+    ? dataObj.forecast.forecastday[0].day.mintemp_f
+    : dataObj.forecast.forecastday[0].day.mintemp_c;
 }
 
 export function precipitation(dataObj) {

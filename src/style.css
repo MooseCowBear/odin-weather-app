@@ -11,7 +11,7 @@ body,
 h1,
 h2,
 h3,
-p, 
+p,
 section,
 article {
   margin: 0;
@@ -43,9 +43,9 @@ a:not([class]) {
 
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -165,7 +165,7 @@ main > div {
 
 .more-info {
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(140px, 1fr) );
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 0.5rem;
 }
 
@@ -191,7 +191,7 @@ h1 {
   font-size: 5rem;
 }
 
-input[type="text"] {
+input[type='text'] {
   background-color: transparent;
   outline: none;
   padding: 0.3rem 0.5rem;
@@ -203,7 +203,7 @@ input[type="text"] {
   border-left: none;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   background-image: url('./images/magnify.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -216,9 +216,10 @@ input[type="submit"] {
   outline: none;
 }
 
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-  filter: brightness(0) saturate(100%) invert(93%) sepia(33%) saturate(868%) hue-rotate(328deg) brightness(99%) contrast(95%);
+input[type='submit']:hover,
+input[type='submit']:focus {
+  filter: brightness(0) saturate(100%) invert(93%) sepia(33%) saturate(868%)
+    hue-rotate(328deg) brightness(99%) contrast(95%);
 }
 
 .error {
@@ -234,7 +235,7 @@ input[type="submit"]:focus {
 }
 
 @media only screen and (max-width: 450px) {
-  input[type="text"] {
+  input[type='text'] {
     max-width: 230px;
   }
 }

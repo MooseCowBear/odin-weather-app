@@ -1,9 +1,15 @@
-export function addElement(type, parent, classes, textContent = null, options = {}){
+export function addElement(
+  type,
+  parent,
+  classes,
+  textContent = null,
+  options = {},
+) {
   const elem = document.createElement(type);
   parent.appendChild(elem);
   elem.classList.add(...classes);
 
-  if (textContent) elem.textContent = textContent; 
+  if (textContent) elem.textContent = textContent;
 
   for (const o in options) {
     elem.setAttribute(o, options[o]);
